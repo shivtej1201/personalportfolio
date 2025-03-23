@@ -19,14 +19,13 @@ export function Experience() {
           </p>
           <div className="space-y-2">
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Built responsive SPAs with React.js + Tailwind CSS
+              ✅ Designed and developed scalable full-stack web applications using the MERN stack (MongoDB, Express.js, React, Node.js), ensuring seamless integration with Stripe/PayPal/Razorpay for secure payment processing.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Developed RESTful APIs with Node.js/Express.js (300ms avg
-              response)
+              ✅ Built a dynamic e-commerce platform with features like cart management, order tracking, and real-time payment status updates.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Integrated Firebase for real-time database updates
+              ✅ Enhanced security by tokenizing sensitive data (JWT) and adhering to PCI-DSS compliance standards for payment gateway integrations.
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 mt-4">
@@ -52,14 +51,13 @@ export function Experience() {
           </p>
           <div className="space-y-2">
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Implemented sales analytics dashboard with 50% faster
-              processing
+              ✅ Created reusable UI components (e.g., dashboards, payment forms) with Material-UI, improving development efficiency.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Optimized mobile UI achieving 95+ Lighthouse score
+              ✅ Reduced payment gateway API errors by implementing error-handling middleware and user-friendly alerts for failed transactions.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Collaborated on CI/CD pipeline implementation
+              ✅ Collaborated with backend teams to design MongoDB schemas for storing transaction histories and user invoices, ensuring data consistency.
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 mt-4">
@@ -78,20 +76,20 @@ export function Experience() {
         <div className="space-y-4">
           <p className="text-neutral-800 dark:text-neutral-200 text-sm">
             <strong>
-              Technical Support Engineer@ Govind Dande and Sons Pvt Ltd
+              Front End Developer @ Govind Dande and Sons Pvt Ltd
             </strong>
             <br />
             2021 - 2022 | Full Stack E-commerce Solution
           </p>
           <div className="space-y-2">
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Provided technical support for enterprise systems
+              ✅ Developed an admin panel with React.js and Chart.js to visualize transaction analytics, helping stakeholders track revenue growth and user behavior.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ JWT authentication & cart management system
+              ✅ utomated reconciliation of payment gateway data with MongoDB records using cron jobs, reducing manual efforts.
             </div>
             <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-sm">
-              ✅ Implemented automated monitoring solutions
+              ✅ Mentored junior developers in code reviews and best practices for maintaining secure, scalable payment systems.
             </div>
           </div>
           <div className="grid grid-cols-1 gap-4 mt-4">

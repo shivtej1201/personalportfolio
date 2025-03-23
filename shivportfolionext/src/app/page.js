@@ -11,6 +11,7 @@ import {
 import FooterSection from "@/components/pages/FooterSection";
 import { ContactForm } from "@/components/pages/ContactForm";
 import { Analytics } from "@vercel/analytics/next";
+import { PopupForm } from "@/components/pages/PopupFrom";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <ContactForm />
       <FooterSection />
       <Analytics />
+      <PopupForm />
     </>
   );
 }

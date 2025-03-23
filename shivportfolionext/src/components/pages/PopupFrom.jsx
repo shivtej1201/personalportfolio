@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from "react";
 import { Label } from "../ui/label";
@@ -10,42 +11,9 @@ import {
   IconX
 } from "@tabler/icons-react";
 
-// Modified MenuItem component to accept onClick handler
-export function MenuItem({ active, item, href, onClick }) {
-  return (
-    <li>
-      <a
-        href={href}
-        onClick={onClick ? (e) => {
-          e.preventDefault();
-          onClick();
-        } : undefined}
-        className={`px-4 py-2 mx-2 rounded-md text-sm font-medium transition-colors ${
-          active
-            ? "bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50"
-            : "text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-gray-50"
-        }`}
-      >
-        {item}
-      </a>
-    </li>
-  );
-}
+export function PopupForm() {
+  const [isOpen, setIsOpen] = useState(false);
 
-export function NavbarWithContactPopup() {
-  const [isContactOpen, setIsContactOpen] = useState(false);
-  
-  // Determine which nav item is active
-  const activeItem = "Contact"; // This would normally be set based on the current route
-  
-  const openContactForm = () => {
-    setIsContactOpen(true);
-  };
-  
-  const closeContactForm = () => {
-    setIsContactOpen(false);
-  };
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -53,7 +21,7 @@ export function NavbarWithContactPopup() {
       firstname: e.target.firstname.value,
       lastname: e.target.lastname.value,
       email: e.target.email.value,
-      message: e.target.message.value,
+      message: e.target.message.value, // Changed id from "password" to "message"
     };
 
     const response = await fetch("http://localhost:5000/contact", {
@@ -64,44 +32,31 @@ export function NavbarWithContactPopup() {
 
     const result = await response.json();
     alert(result.message);
-    closeContactForm();
+    setIsOpen(false); // Close popup after submission
   };
+
+  const openPopup = () => setIsOpen(true);
+  const closePopup = () => setIsOpen(false);
 
   return (
     <>
-      {/* Navigation Menu */}
-      <nav className="bg-white dark:bg-gray-900 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                {/* Your logo here */}
-                <span className="text-xl font-bold">Portfolio</span>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                <ul className="flex">
-                  <MenuItem active={activeItem === "Home"} item="Home" href="/" />
-                  <MenuItem active={activeItem === "About"} item="About" href="/about" />
-                  <MenuItem active={activeItem === "Projects"} item="Projects" href="/projects" />
-                  <MenuItem 
-                    active={activeItem === "Contact"} 
-                    item="Contact" 
-                    href="/contact"
-                    onClick={openContactForm}
-                  />
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Button to open the popup */}
+      <button
+        onClick={openPopup}
+        className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 text-white rounded-md px-4 py-2 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+      >
+        Contact Me
+        <BottomGradient />
+      </button>
 
-      {/* Contact Form Popup */}
-      {isContactOpen && (
+      {/* Popup overlay */}
+      {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          {/* Popup content */}
           <div className="max-w-md w-full mx-auto rounded-2xl p-6 shadow-input bg-white dark:bg-black relative animate-fadeIn">
+            {/* Close button */}
             <button 
-              onClick={closeContactForm}
+              onClick={closePopup}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
             >
               <IconX size={24} />
